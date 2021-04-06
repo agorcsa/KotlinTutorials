@@ -1,49 +1,31 @@
+import enemy.Enemy
+import enemy.Troll
+import enemy.Vampire
+import enemy.VampireKing
+
 fun main() {
 
-    // loops from 0 to 10
-    for (i in 0..10) {
-        println("$i squared is ${i * i}")
-    }
+    // in Kotlin the Base class for all other classes is Any
 
-    println("====================")
+    val enemy = Enemy("Test enemy.Enemy", 50, 3)
+    enemy.takeDamage(60)
+    println(enemy)
 
-    // loops from 0 to 9
-    for (i in 0 until 10) {
-        println(i)
-    }
+    val uglyTroll = Troll("Ugly enemy.Troll")
+    println(uglyTroll)
 
-    println("====================")
+    uglyTroll.takeDamage(30)
+    println(uglyTroll)
 
-    // loops from 10 down to 0
-    for (i in 10 downTo 0) {
-        println(i)
-    }
+    val vlad = Vampire("Vlad")
+    println(vlad)
+    vlad.takeDamage(8)
+    println(vlad)
 
-    println("====================")
-
-    for (i in 10 downTo 0 step 2) {
-        println(i)
-    }
-
-    println("====================")
-
-    // challenge
-    // option 1
-    println("The numbers that are both divisible by 3 and 5 are:")
-    for (i in 0..100) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            println(i)
-        }
-    }
-
-    println("====================")
-
-    //option 2
-    for (i in 0..100 step 3) {
-        if (i % 5 == 0) {
-            println(i)
-        }
-    }
+    val dracula = VampireKing("Dracula")
+    println(dracula)
+    dracula.takeDamage(40)
+    println(dracula)
 }
 
 
